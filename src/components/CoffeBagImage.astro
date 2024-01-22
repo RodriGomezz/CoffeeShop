@@ -1,0 +1,31 @@
+---
+import AstroImage3 from "../assets/coffeeBlend.png"
+import AstroImage2 from "../assets/photo-1643191164884-94fcbea56c09.avif"
+import { getImage , Image } from "astro:assets";
+
+const optimizedImage3 = await getImage({src:AstroImage2});
+---
+
+<section class="h-96 hiddenElement" style={`background-image: url(${optimizedImage3.src}); background-size: cover; background-position: center `}>
+    <div  class="coffeeBlend flex flex-col sm:flex-row sm:justify-around justify-center items-center w-full h-96 font-bold sm:text-2xl">
+        <span class="w-96 font-semibold">Introducing our cuppa Blend, a harmonious fusion of high-altitude Arabica beans from Ethiopia and Colombian Supremo.</span>
+        <div>
+            <Image class="w-64 sm:mb-36  sm:w-96" src={AstroImage3} alt="CoffeeBagImage">
+            </div>
+        </div>
+</section>
+
+<style>
+        .show{
+        animation: moveAnimationLeft 1s ease-in-out;
+	}
+
+    @keyframes moveAnimationRight{
+        0%{
+            transform: translateX(100%);
+        }
+        100%{
+            transform: translateX(0%);
+        }
+    }
+</style>

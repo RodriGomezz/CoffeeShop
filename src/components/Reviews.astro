@@ -1,0 +1,27 @@
+---
+import Testimonial from "./Testimonial.astro"
+import portafilter from "../assets/portafilter.png"
+import { Image } from "astro:assets";
+---
+
+<section id="reviews">
+    <div class="flex flex-col justify-center  items-center mx-auto max-w-screen-xl px-4 py-20 sm:px-6 lg:px-8 lg:py-32 hiddenElement">
+        <h2 class="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+            Read trusted reviews from our customers
+        </h2>
+        <div class=" ">
+            <div class="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
+            <Testimonial></Testimonial>
+            <Testimonial></Testimonial>
+            <Testimonial></Testimonial>
+            </div>
+        </div>
+        <Image class="max-w-64 pt-10"  src={portafilter} alt="portafilter">
+    </div>
+</section>
+
+<style>
+       .show{
+        animation: moveAnimationRight 1s ease-in-out;
+	}
+</style>

@@ -1,0 +1,11 @@
+---
+import Footer from '../components/Footer.astro';
+import bottomImg from "../assets/unsplash_TD4DBagg2wE.avif"
+import { getImage } from "astro:assets";
+
+const optimizedImage2 = await getImage({src:bottomImg});
+---
+
+<section id="contact" style={`background-image: url(${optimizedImage2.src}); background-size:cover`}; >
+    <Footer></Footer>
+</section>

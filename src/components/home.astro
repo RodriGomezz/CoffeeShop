@@ -1,0 +1,25 @@
+<section class="home flex items-center justify-center h-screen" id="home">
+	<div class="flex flex-col items-center space-y-5">
+		<h1 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-center">
+			Welcome to Cuppa Heaven				  </h1>
+		<p class="mx-auto max-w-[800px] text-gray-500 md:text-xl dark:text-gray-400 text-center">
+			Experience the warmth and comfort of our artisanal coffee blends in a cozy environment.
+			</p>
+		<button class="learnMoreBtn bg-orange-600 py-1.5 px-3 rounded-3xl transition ease-in-out delay-150 bg-orange-500 hover:-translate-y-1 hover:scale-110 hover:bg-orange-500 duration-300"><a href="#menu">Explore Menu</a></button>
+	</div>
+</section>
+
+<style>
+	.home{
+		animation: opacityTransition 1.5s ease-in-out;
+	}
+
+	@keyframes opacityTransition{
+		0%{
+			opacity: 0;
+		}
+		100%{
+			opacity: 1;
+		}
+	}
+</style>

@@ -1,0 +1,37 @@
+---
+import overturnedCup from "../assets/overturnedCup.png"
+import {Image } from "astro:assets";
+
+---
+
+<section id="aboutUs">
+    <div class="flex justify-evenly flex-wrap hiddenElement">
+        <div class="lg:pl-32 pt-32">
+            <h2 class="text text-3xl pb-10">Discover the best coffee</h2>
+            <p class="text-black text-xl max-w-2xl">Welcome to Cuppa Haven! We're more than a coffee shop; we're a cozy retreat. Our passion is crafting exceptional coffee experiences. From carefully sourced beans to cozy corners, we're here to serve up delicious brews and cultivate connections. Join us for your daily cup of joy at Cuppa Haven!</p>
+        </div>
+        <Image class="aboutUsImg w-screen" src={overturnedCup} alt="AboutUsImage">
+    </div>
+</section>
+
+<style>
+    .text{
+		color:#6A391B;
+	}
+    .aboutUsImg{
+		max-width: 700px;
+	}
+    
+    .show{
+        animation: moveAnimationLeft 1s ease-in-out;
+	}
+    
+    @keyframes moveAnimationLeft{
+        0%{
+            transform: translateX(-100%);
+        }
+        100%{
+            transform: translateX(0%);
+        }
+    }
+</style>

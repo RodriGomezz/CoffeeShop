@@ -1,0 +1,109 @@
+---
+import cuppaHeavenLogo from '../assets/cuppaHeavenLogo.png'
+import { Image } from "astro:assets";
+import Sidebar from './Sidebar.astro';
+---
+
+<nav class="navbar flex justify-between items-center py-3 px-32 w-screen absolute">
+    <span>
+       <Image class="cuppaLogo" src={cuppaHeavenLogo} alt="CuppaLogo">
+      </span>
+    <div class="navbarOption flex gap-2">
+        <a class="btn flex justify-center items-center" href="#aboutUs">
+        <svg class="svgAnimation" width="100px" height="40px" viewBox="0 0 180 60">
+            <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+            <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+        </svg>
+        <span class="font-bold" >About Us</span>
+        </a>
+        <a class="btn flex justify-center items-center sm:hidde" href="#menu">
+        <svg class="svgAnimation" width="100px" height="40px" viewBox="0 0 180 60">
+            <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+            <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+        </svg>
+        <span>Menu</span>
+        </a>
+        <a class="btn flex justify-center items-center" href="#reviews">
+        <svg class="svgAnimation" width="100px" height="40px" viewBox="0 0 180 60">
+            <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+            <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+        </svg>
+        <span>Reviews</span>
+        </a>
+        <a class="btn flex justify-center items-center" href="#contact">
+        <svg class="svgAnimation" width="100px" height="40px" viewBox="0 0 180 60">
+            <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+            <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+        </svg>
+        <span>Contact</span>
+        </a>
+      
+    </div>       
+
+    <Sidebar></Sidebar>
+
+</nav>
+
+
+<style>
+    .cuppaLogo{
+        max-width: 150px;
+    }
+    .svgAnimation {
+        position: absolute;
+        fill: none;
+        stroke: #fff;
+        stroke-dasharray: 150 480;
+        stroke-dashoffset: 150;
+        transition: 1s ease-in-out;
+    }
+
+    .btn {
+        width: 100px;
+        height: 40px;
+        cursor: pointer;
+        background: transparent;
+        outline: none;
+        transition: 1s ease-in-out;
+    }
+
+    .btn:hover svg {
+        stroke-dashoffset: -480;
+    }
+
+    .btn span {
+        color: white;
+        font-size: 18px;
+        font-weight: 100;
+    }
+
+    @media (max-width: 750px){
+        .navbarOption{
+            display: none;
+        }
+
+        .navbar{
+         position: fixed;
+         background-color: rgba(0, 0, 0, 0.9);
+         padding: 0 20px;
+        }
+
+        .hamburgerBtn{
+            display: block;
+        }
+    }
+
+	.navbar{
+		animation: opacityTransition 1.5s ease-in-out;
+	}
+
+	@keyframes opacityTransition{
+		0%{
+			opacity: 0;
+		}
+		100%{
+			opacity: 1;
+		}
+	}
+
+</style>

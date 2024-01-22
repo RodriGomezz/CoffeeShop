@@ -1,0 +1,67 @@
+---
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
+import Home from '../components/home.astro'
+import AboutUs from '../components/aboutUs.astro'
+import Menu from '../components/Menu.astro'
+import Reviews from '../components/Reviews.astro';
+
+import AstroPrincipal from "../assets/coffeeHome.avif"
+import { getImage } from "astro:assets";
+import SubscriptionForm from '../components/SubscriptionForm.astro';
+import Contact from '../components/Contact.astro';
+import CoffeBagImage from '../components/CoffeBagImage.astro';
+
+const homeBackground= await getImage({src:AstroPrincipal});
+
+---
+
+<Layout title="Welcome to CuppaHeaven">
+	<main>
+		<div style={`background-image: url(${homeBackground.src}); background-size:cover; background-position: center; z-index:-1; top:0; filter: brightness(0.5) saturate(1.7);`} class="h-screen w-screen absolute " ></div>
+
+		<Header></Header> 
+		<Home></Home>
+		<AboutUs></AboutUs>
+		<Menu></Menu>
+		<CoffeBagImage></CoffeBagImage>
+		<Reviews></Reviews>
+		<SubscriptionForm></SubscriptionForm>
+		<Contact></Contact>
+
+	</main>
+</Layout>
+
+<script>
+	const button = document.querySelector('.hamburgerBtn');
+	const sideButton = document.querySelectorAll('.sidebarBtn');
+	const sidebar = document.querySelector('#logo-sidebar');
+	const subscribe = document.querySelector('.subscribeBtn');
+	const alert = document.querySelector('.testAlert');
+
+	button.addEventListener('click', () => {sidebar.classList.toggle('translate-x-0')}
+	);
+
+	sideButton.forEach(button => {
+		button.addEventListener('click', () => sidebar.classList.remove('translate-x-0')	
+	)	
+	});
+	
+	subscribe.addEventListener('click', () => {alert.classList.remove('hidden'),
+	alert.classList.add('alertAnimation'),
+	setTimeout(()=>{
+		alert.classList.add('hidden')
+	},3000)}
+	)
+
+	const hiddenElements = document.querySelectorAll(".hiddenElement");
+
+const observer = new IntersectionObserver((e) => {
+  e.forEach((e) => {
+    if (e.isIntersecting) e.target.classList.add("show");
+  });
+});
+
+hiddenElements.forEach((e) => observer.observe(e));
+	
+ </script>

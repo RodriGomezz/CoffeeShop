@@ -1,0 +1,73 @@
+---
+import Mug1 from "../assets/photo-1604423043492-41303788de802.avif"
+import Mug2 from "../assets/photo-1613336026275-d6d473084e852.avif"
+import Mug3 from "../assets/photo-1485808191679-5f86510681a22.avif"
+import { Image } from "astro:assets";
+
+---
+
+
+<section id="menu" class="hiddenElement">
+    <h2 class="enjoyText pt-28 text-4xl text-center ">Enjoy our blends of coffee</h2>
+    <div class="menu flex justify-center gap-20 py-20 pb-44 text-black flex-wrap">
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+            <span >
+                <Image class="cup rounded-t-lg"  src={Mug1} alt="Mug 1">
+                </span>
+            <h3 class="text-lg font-semibold mb-2 text-center">Capuccino</h2>
+                <p class="text-sm text-gray-500 dark:text-gray-500 mb-4 max-w-64 text-center">
+                    This is a description of the product. It's really cool!
+                  </p>
+        </div>
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+            <span >
+                <Image class="cup2 rounded-t-lg"  src={Mug2} alt="Mug 2">
+                </span>
+            <h3 class="text-lg font-semibold mb-2 text-center">Americano</h2>
+                <p class="text-sm text-gray-500 dark:text-gray-500 mb-4 max-w-64 text-center">
+                    This is a description of the product. It's really cool!
+                  </p>
+        </div>
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+            <span >
+                <Image class="cup rounded-t-lg"  src={Mug3} alt="Mug 3">
+                </span>
+            <h3 class="text-lg font-semibold mb-2 text-center">Coffe</h2>
+                <p class="text-sm text-gray-500 dark:text-gray-500 mb-4 max-w-64 text-center">
+                    This is a description of the product. It's really cool!
+                  </p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .enjoyText{
+        color:#6A391B;
+	}
+    .cup{
+        max-width: 270px;
+		height: 220px;
+		object-fit: cover;
+		object-position: 0 -130px;
+	}
+    
+	.cup2{
+        width: 270px;
+		height: 220px;
+	}
+
+
+    .show{
+        animation: moveAnimationRight 1s ease-in-out;
+	}
+
+    @keyframes moveAnimationRight{
+        0%{
+            transform: translateX(100%);
+        }
+        100%{
+            transform: translateX(0%);
+        }
+    }
+    
+</style>
